@@ -39,58 +39,36 @@
 // Sommiamo i 2 numeri e dichiariamo chi ha vinto.
 
 
-// FUNZIONE - genera numero random
 
-function computerNumber(min, max) {
+// Utente sceglie pari o dispari e un numero da 1 a 5.
+
+var userChoice = 'Pari';
+var userNumber = parseInt(prompt('scegliere un numero: '));
+
+console.log('Scelta utente: ' + userChoice);
+console.log('Numero utente: ' + userNumber);
+
+// Numero rnd computer
+
+function getRnd(min, max) {
     var minRnd = min;
-    var maxRnd = max - minRnd + 1;
-    var rnd1 = Math.floor(Math.random() * maxRnd) + minRnd;
-    return rnd1;
+    var maxRnd= max - minRnd + 1;
+
+    var rnd = Math.floor(Math.random() * maxRnd) +minRnd;
+
+    return rnd;
 }
-//console.log(computerNumber(1, 5));
+var res = getRnd(1, 5);
+console.log('Numero rnd computer:' + res);
+
+// sommo numero inserito da Utente con numero rnd del Computer
+
+var sum = userNumber + res;
+console.log('somma ottenuta: ' + sum)
 
 
-// FUNZIONE - è pari o dispari?
-
-function isPair() {
-    return finalUser % 2 === 0;
-}
-console.log(isPair());
-
-
-
-// scelta "numero" e "pari - dispari" User
-
-var userNumber = 2;
-var userChoice = true;
-
-
-var finalUser = userNumber + computerNumber(1,5);
-console.log('somma User: ' + finalUser);
-
-// numero Rnd Computer
-
-var finalComputer = computerNumber(1,5);
-console.log('numero rnd Computer: ' + finalComputer);
-
-
-// vince User o Computer?
-
-if ((finalUser > finalComputer) && userChoice === isPair(userChoice) ) {
-
-    console.log('vince USER con PARI: ' + finalUser);
-
-}else if ((finalUser > finalComputer) && userChoice !== isPair(userChoice) ) {
-
-    console.log('vince USER con DISPARI: ' + finalUser);
-
-}else if ((finalUser < finalComputer) && userChoice === isPair(userChoice) ) {
-
-    console.log('vince COMPUTER con PARI: ' + finalComputer);
-
-}else if ((finalUser < finalComputer) && userChoice !== isPair(userChoice) ) {
-
-    console.log('vince COMPUTER con DISPARI: ' + finalComputer);
+if(sum % 2 === 0) {
+    console.log('Numero PARI , ha vinto l\'Utente!');
 } else {
-    console.log('parità!')
+    console.log('Numero DISPARI, ha vinto il Computer!');
 }

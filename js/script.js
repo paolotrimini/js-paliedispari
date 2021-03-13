@@ -64,7 +64,7 @@ console.log('Numero rnd computer:' + res);
 // sommo numero inserito da Utente con numero rnd del Computer
 
 var sum = userNumber + res;
-console.log('somma ottenuta: ' + sum)
+console.log('somma ottenuta: ' + sum);
 
 
 if(sum % 2 === 0) {
